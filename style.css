@@ -1,4 +1,4 @@
-:root{color-scheme:light;--paper:#f8f3e9;--card:#fffaf2;--ink:#272820;--muted:#655d51;--green:#343d2e;--rust:#9d482e;--line:#ded4c4;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+﻿:root{color-scheme:light;--paper:#f8f3e9;--card:#fffaf2;--ink:#272820;--muted:#655d51;--green:#343d2e;--rust:#9d482e;--line:#ded4c4;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
 *{box-sizing:border-box}
 body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 var(--sans)}
 button,input,textarea,select{font:inherit}
@@ -61,5 +61,6 @@ input:not([type=checkbox]){max-width:100%;min-width:0;padding:9px;border:1px sol
 #join-form{align-items:end;margin-bottom:16px}
 #join-form label{margin:0}
 .table-qr{text-align:center}
-.table-qr canvas{width:min(240px,100%);height:auto;image-rendering:pixelated;display:block;margin:12px auto}
+.table-qr img{width:min(240px,100%);height:auto;image-rendering:pixelated;display:block;margin:12px auto}
 @media print{body>*{visibility:hidden}dialog[open],dialog[open] *{visibility:visible}dialog[open]{position:absolute;inset:0 auto auto 0;border:0;max-height:none}dialog button{display:none}dialog::backdrop{background:transparent}}
+

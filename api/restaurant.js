@@ -139,6 +139,7 @@ module.exports = async (req, res) => {
         check(role === "kasir", "Masuk sebagai kasir terlebih dahulu.", 401);
         check(allowedTable(table), "Nomor meja tidak valid.");
         const host = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+        check(process.env.VERCEL !== "1" || process.env.PUBLIC_APP_ORIGIN || host, "Alamat publik untuk QR belum dikonfigurasi.", 503);
         const origin = process.env.PUBLIC_APP_ORIGIN || (host ? "https://" + host : "http://127.0.0.1:" + (process.env.PORT || 8766));
         const target = new URL("/", origin);
         target.searchParams.set("meja", table);
@@ -177,4 +178,5 @@ module.exports = async (req, res) => {
     return res.status(status).json({ error: error.status ? error.message : status === 400 ? "Format permintaan tidak valid." : "Layanan pesanan sedang tidak tersedia." });
   }
 };
+
 
